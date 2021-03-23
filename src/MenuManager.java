@@ -19,7 +19,7 @@ public class MenuManager {
 		    switch(num) {
 		    case 1:
 		    	System.out.print("Date :");
-		    	String accountsdate = input.next();
+		    	String accountdate = input.next();
 		    	System.out.print("Content :");
 		    	String accountname = input.next();
 		    	System.out.print("Income :");
