@@ -40,3 +40,51 @@ public class MenuManager {
 	}
 
 }
+
+
+*** Accounts Management System Menu ***
+1. Add Accounts
+2. Delete Accounts
+3. Edit Accounts
+4. View Accounts
+5. Show a menu
+6. Exit
+Select one number between 1 - 6:
+1
+Date :3/30
+Content :알바비
+Income :200000
+Expenditure :0
+Sum:200000
+*** Accounts Management System Menu ***
+1. Add Accounts
+2. Delete Accounts
+3. Edit Accounts
+4. View Accounts
+5. Show a menu
+6. Exit
+Select one number between 1 - 6:
+1
+Date :3/31
+Content :음식
+Income :0
+Expenditure :-20000
+Sum:-20000
+*** Accounts Management System Menu ***
+1. Add Accounts
+2. Delete Accounts
+3. Edit Accounts
+4. View Accounts
+5. Show a menu
+6. Exit
+Select one number between 1 - 6:
+2
+Date :3/31
+*** Accounts Management System Menu ***
+1. Add Accounts
+2. Delete Accounts
+3. Edit Accounts
+4. View Accounts
+5. Show a menu
+6. Exit
+Select one number between 1 - 6:
