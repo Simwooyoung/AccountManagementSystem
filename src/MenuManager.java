@@ -33,7 +33,7 @@ public class MenuManager {
 		    case 3:
 		    case 4:
 		    	System.out.print("Date :");
-		    	int date = input.nextInt();
+		    	String date = input.next();
 		 
 		    }
 		}
