@@ -11,10 +11,3 @@ public class MenuManager {
 	}
 
 }
-
-
-Add Accounts
-Delete Accounts
-Edit Accounts
-View Accounts
-Exit
