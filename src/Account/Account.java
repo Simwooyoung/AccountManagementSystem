@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Account {
 
 	protected AccountQuarter quarter = AccountQuarter.Firstquarter;
-	protected int date;
+	protected String date;
 	protected String content;
 	protected int income;
 	protected int expenditure;
@@ -14,13 +14,26 @@ public class Account {
 	public Account() {	
 	}
 	
-	public Account(int date, String content) {
+	public Account(AccountQuarter quarter) {
+		this.quarter = quarter;
+	}
+	
+	public Account(String date, String content) {
 		this.date = date;
 		this.content = content;
 		
 	}
 	
-	public Account(int date, String content, int income, int expenditure, int result) {
+	public Account(String date, String content, int income, int expenditure, int result) {
+		this.date = date;
+		this.content = content;
+		this.income = income;
+		this.expenditure = expenditure;
+		this.result = result;
+	}
+	
+	public Account(AccountQuarter quarter, String date, String content, int income, int expenditure, int result) {
+		this.quarter = quarter;
 		this.date = date;
 		this.content = content;
 		this.income = income;
@@ -36,11 +49,11 @@ public class Account {
 		this.quarter = quarter;
 	}
 
-	public int getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(int date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -76,14 +89,31 @@ public class Account {
 		this.result = result;
 	}
 
+	
 	public void printInfo() {
+		String squarter = "none";
+		switch(this.quarter) {
+		case Firstquarter:
+			squarter = "First.";
+			break;
+		case Secondquarter:
+			squarter = "Second.";
+			break;
+		case Thirdquarter:
+			squarter = "Third.";
+			break;
+		case Fourthquarter:
+			squarter = "Fourth.";
+			break;
+		default:			
+		}
 		result = income - expenditure;
-		System.out.println("date:" + date + "Content:"+ content+"Income:"+ income +"Expenditure:"+ expenditure + "Sum:" + result);
+		System.out.println("quarter" + squarter + "date:" + date + "Content:"+ content+"Income:"+ income +"Expenditure:"+ expenditure + "Sum:" + result);
 	}
 	
-	public void getUserinput(Scanner input) {
+	public void getUserInput(Scanner input) {
 		System.out.print("Date :");
-    	int date = input.nextInt();
+    	String date = input.next();
     	this.setDate(date);
     	
     	System.out.print("Content :");

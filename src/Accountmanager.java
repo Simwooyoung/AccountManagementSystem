@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import Account.Account;
+import Account.AccountQuarter;
+import Account.SecondQuarter;
+import Account.ThirdQuarterAccount;
 
 public class Accountmanager {
 	ArrayList<Account> accounts = new ArrayList<Account>();
@@ -14,29 +16,38 @@ public class Accountmanager {
 		int quarter = 0;
 		Account account;
 		while(quarter!= 1 && quarter!= 2) {
-		System.out.print("1 for firstquarter:");
-		System.out.print("2 for secondquarter:");
-		System.out.print("Select num for Account Quarter:");
+		System.out.println("1 for firstquarter:");
+		System.out.println("2 for secondquarter:");
+		System.out.println("3 for thirdquarter:");
+		System.out.print("Select num 1,2, or 3 for Account Quarter:");
 		quarter = input.nextInt();
 		if (quarter == 1) {
-			 account = new Account();
+			 account = new Account(AccountQuarter.Firstquarter);
+			 account.getUserInput(input);
 		     accounts.add(account);
 			break;
 		}
 		else if (quarter == 2) {
-			 account = new Account();
+			 account = new SecondQuarter(AccountQuarter.Secondquarter);
+			 account.getUserInput(input);
 		     accounts.add(account);
 			break;
 		}
+		else if (quarter == 3) {
+			 account = new ThirdQuarterAccount(AccountQuarter.Thirdquarter);
+			 account.getUserInput(input);
+		     accounts.add(account);
+			break;
+		}	
 		else {
-			System.out.print("Select num for Account Quarter between 1 and 2");
+			System.out.print("Select num for Account Quarter between 1,2 or 3 : ");
 		}
       }		
 	}
 	
 	public void deleteAccount() {
 		System.out.print("date :");
-    	int accountdate = input.nextInt();
+    	String accountdate = input.next();
     	int index = -1;
     	for (int i = 0; i<accounts.size(); i++) {
     		if(accounts.get(i).getDate() == accountdate) {
@@ -58,7 +69,7 @@ public class Accountmanager {
 	
 	public void editAccount() {
 		System.out.print("Date :");
-    	int accountdate = input.nextInt();
+    	String accountdate = input.next();
     	for (int i = 0; i<accounts.size(); i++) {
     		Account account = accounts.get(i);
     		if (accounts.get(i).getDate() == accountdate) {
@@ -74,7 +85,7 @@ public class Accountmanager {
         		    num = input.nextInt();
         		    if(num == 1) {
         		    	System.out.print("Date:");
-        		    	int date = input.nextInt();
+        		    	String date = input.next();
         		    	account.setDate(date);
         		    }
         		    else if(num == 2) {
@@ -95,16 +106,16 @@ public class Accountmanager {
         		    else {
         		    	continue;
         		    }
-        		 }
+        		}
         		break;
-        	 }
-       }
+        	}
+        }
 	}
 	
 	public void viewAccounts() {
 		//System.out.print("Date :");
     	//int accountdate = input.nextInt();
-		System.out.println("# of registered Accounts: " +accounts.size());
+		System.out.println("# of registered Accounts: " + accounts.size());
 		for (int i = 0; i<accounts.size(); i++) {
 			accounts.get(i).printInfo();
 		}
