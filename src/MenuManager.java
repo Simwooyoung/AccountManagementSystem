@@ -39,3 +39,42 @@ public class MenuManager {
 }
 
 
+
+
+
+*** Accounts Management System Menu ***
+1. Add Accounts
+2. Delete Accounts
+3. Edit Accounts
+4. View Accounts
+5. Exit
+Select one number between 1 - 5:
+1
+1 for firstquarter:
+2 for secondquarter:
+3 for thirdquarter:
+Select num 1,2, or 3 for Account Quarter:2
+Date :5/3
+Content :책구입
+Is this a poket money? (Y/N)
+n
+income :0
+Expenditure :10000
+Sum:-10000
+*** Accounts Management System Menu ***
+1. Add Accounts
+2. Delete Accounts
+3. Edit Accounts
+4. View Accounts
+5. Exit
+Select one number between 1 - 5:
+4
+# of registered Accounts: 1
+quarterSecond.date:5/3Content:책구입Income:0Expenditure:10000Sum:-10000
+*** Accounts Management System Menu ***
+1. Add Accounts
+2. Delete Accounts
+3. Edit Accounts
+4. View Accounts
+5. Exit
+Select one number between 1 - 5:
