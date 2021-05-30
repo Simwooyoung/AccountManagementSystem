@@ -1,12 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import Account.Account;
+import Account.AccountInput;
 import Account.AccountQuarter;
+import Account.FirstQuarter;
 import Account.SecondQuarter;
 import Account.ThirdQuarterAccount;
 
 public class Accountmanager {
-	ArrayList<Account> accounts = new ArrayList<Account>();
+	ArrayList<AccountInput> accounts = new ArrayList<AccountInput>();
 	Scanner input;	
 	Accountmanager(Scanner input){
 		this.input = input;
@@ -14,7 +16,7 @@ public class Accountmanager {
 	
 	public void addAccount() {
 		int quarter = 0;
-		Account account;
+		AccountInput accountInput;
 		while(quarter!= 1 && quarter!= 2) {
 		System.out.println("1 for firstquarter:");
 		System.out.println("2 for secondquarter:");
@@ -22,21 +24,21 @@ public class Accountmanager {
 		System.out.print("Select num 1,2, or 3 for Account Quarter:");
 		quarter = input.nextInt();
 		if (quarter == 1) {
-			 account = new Account(AccountQuarter.Firstquarter);
-			 account.getUserInput(input);
-		     accounts.add(account);
+			 accountInput = new FirstQuarter(AccountQuarter.Firstquarter);
+			 accountInput.getUserInput(input);
+		     accounts.add(accountInput);
 			break;
 		}
 		else if (quarter == 2) {
-			 account = new SecondQuarter(AccountQuarter.Secondquarter);
-			 account.getUserInput(input);
-		     accounts.add(account);
+			 accountInput = new SecondQuarter(AccountQuarter.Secondquarter);
+			 accountInput.getUserInput(input);
+		     accounts.add(accountInput);
 			break;
 		}
 		else if (quarter == 3) {
-			 account = new ThirdQuarterAccount(AccountQuarter.Thirdquarter);
-			 account.getUserInput(input);
-		     accounts.add(account);
+			 accountInput = new ThirdQuarterAccount(AccountQuarter.Thirdquarter);
+			 accountInput.getUserInput(input);
+		     accounts.add(accountInput);
 			break;
 		}	
 		else {
@@ -71,8 +73,8 @@ public class Accountmanager {
 		System.out.print("Date :");
     	String accountdate = input.next();
     	for (int i = 0; i<accounts.size(); i++) {
-    		Account account = accounts.get(i);
-    		if (accounts.get(i).getDate() == accountdate) {
+    		AccountInput accountInput = accounts.get(i);
+    		if (accountInput.getDate() == accountdate) {
         		int num = -1;
         		while (num != 5) {
         		    System.out.println("*** Accounts Management System Menu ***");
@@ -86,22 +88,22 @@ public class Accountmanager {
         		    if(num == 1) {
         		    	System.out.print("Date:");
         		    	String date = input.next();
-        		    	account.setDate(date);
+        		    	accountInput.setDate(date);
         		    }
         		    else if(num == 2) {
         		    	System.out.print("Content:");
         		    	String contnet = input.next();
-        		    	account.setContent(contnet);
+        		    	accountInput.setContent(contnet);
         		    }
         		    else if(num == 3) {
         		    	System.out.print("Income:");
         		    	int income = input.nextInt();
-        		    	account.setIncome(income);
+        		    	accountInput.setIncome(income);
         		    }
         		    else if(num == 4) {
         		    	System.out.print("Expenditure:");
         		    	int expenditure = input.nextInt();
-        		    	account.setExpenditure(expenditure);
+        		    	accountInput.setExpenditure(expenditure);
         		    }
         		    else {
         		    	continue;

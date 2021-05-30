@@ -2,7 +2,7 @@ package Account;
 
 import java.util.Scanner;
 
-public class Account {
+public abstract class  Account {
 
 	protected AccountQuarter quarter = AccountQuarter.Firstquarter;
 	protected String date;
@@ -90,46 +90,5 @@ public class Account {
 	}
 
 	
-	public void printInfo() {
-		String squarter = "none";
-		switch(this.quarter) {
-		case Firstquarter:
-			squarter = "First.";
-			break;
-		case Secondquarter:
-			squarter = "Second.";
-			break;
-		case Thirdquarter:
-			squarter = "Third.";
-			break;
-		case Fourthquarter:
-			squarter = "Fourth.";
-			break;
-		default:			
-		}
-		result = income - expenditure;
-		System.out.println("quarter" + squarter + "date:" + date + "Content:"+ content+"Income:"+ income +"Expenditure:"+ expenditure + "Sum:" + result);
-	}
-	
-	public void getUserInput(Scanner input) {
-		System.out.print("Date :");
-    	String date = input.next();
-    	this.setDate(date);
-    	
-    	System.out.print("Content :");
-    	String content = input.next();
-    	this.setContent(content);
-    	
-    	System.out.print("Income :");
-    	int income = input.nextInt();
-    	this.setIncome(income);
-    	
-    	System.out.print("Expenditure :");
-    	int expenditure = input.nextInt();
-    	this.setExpenditure(expenditure);
-		
-    	int result = income - expenditure;
-    	System.out.println("Sum:" + result);
-	}
-		
+	public abstract void printInfo();
 }
