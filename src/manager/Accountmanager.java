@@ -1,8 +1,10 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import Account.Account;
 import Account.AccountInput;
 import Account.AccountQuarter;
 import Account.FirstQuarter;
@@ -18,6 +20,10 @@ public class Accountmanager implements Serializable {
 	ArrayList<AccountInput> accounts = new ArrayList<AccountInput>();
 	transient Scanner input;	
 	Accountmanager(Scanner input){
+		this.input = input;
+	}
+	
+	public void setScanner(Scanner input) {
 		this.input = input;
 	}
 
@@ -134,7 +140,14 @@ public class Accountmanager implements Serializable {
 		}
 
 	}
-
+	
+	public int size() {
+		return accounts.size();
+	}
+	
+	public AccountInput get(int index) {
+		return (Account) accounts.get(index);
+	}
 
 
 	public void showEditMEnu() {
