@@ -1,16 +1,22 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import Account.Account;
+
 import Account.AccountInput;
 import Account.AccountQuarter;
 import Account.FirstQuarter;
 import Account.SecondQuarter;
 import Account.ThirdQuarterAccount;
 
-public class Accountmanager {
+public class Accountmanager implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5144152129004526647L;
+	
 	ArrayList<AccountInput> accounts = new ArrayList<AccountInput>();
-	Scanner input;	
+	transient Scanner input;	
 	Accountmanager(Scanner input){
 		this.input = input;
 	}

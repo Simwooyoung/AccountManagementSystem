@@ -1,9 +1,14 @@
 package Account;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class  Account implements AccountInput {
+public abstract class  Account implements AccountInput, Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 21080321235084384L;
 	protected AccountQuarter quarter = AccountQuarter.Firstquarter;
 	protected String date;
 	protected String content;
