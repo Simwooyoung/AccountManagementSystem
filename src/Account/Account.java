@@ -2,7 +2,7 @@ package Account;
 
 import java.util.Scanner;
 
-public abstract class  Account {
+public abstract class  Account implements AccountInput {
 
 	protected AccountQuarter quarter = AccountQuarter.Firstquarter;
 	protected String date;
@@ -91,4 +91,48 @@ public abstract class  Account {
 
 	
 	public abstract void printInfo();
+	
+	public void setAccountDate(Scanner input) {
+		System.out.print("Date:");
+    	String date = input.next();
+    	this.setDate(date);
+	}
+	
+	public void setAccountContent (Scanner input) {
+		System.out.print("Content:");
+    	String contnet = input.next();
+    	this.setContent(contnet);
+    	}
+	
+	public void setAccountIncome( Scanner input) {
+		System.out.print("Income:");
+    	int income = input.nextInt();
+    	this.setIncome(income);
+    	}
+	
+	public void setAccountExpenditure( Scanner input) {
+		System.out.print("Expenditure:");
+    	int expenditure = input.nextInt();
+    	this.setExpenditure(expenditure);
+    	}
+	
+	public String getQuarterString() {
+		String squarter = "none";
+		switch(this.quarter) {
+		case Firstquarter:
+			squarter = "First.";
+			break;
+		case Secondquarter:
+			squarter = "Second.";
+			break;
+		case Thirdquarter:
+			squarter = "Third.";
+			break;
+		case Fourthquarter:
+			squarter = "Fourth.";
+			break;
+		default:			
+		}
+		return squarter;
+	}
 }
