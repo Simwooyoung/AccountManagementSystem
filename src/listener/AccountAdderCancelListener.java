@@ -8,21 +8,21 @@ import gui.AccountAdder;
 import gui.AccountViewer;
 import gui.WindowFrame;
 
-public class ButtonAddListener implements ActionListener {
+public class AccountAdderCancelListener implements ActionListener {
 	
 	WindowFrame frame;
 
-	public ButtonAddListener(WindowFrame frame) {
+	public AccountAdderCancelListener(WindowFrame frame) {
 		this.frame = frame;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		frame.getContentPane().removeAll();
-		frame.getContentPane().add(frame.getAccountadder());
+		frame.getContentPane().add(frame.getMenuselection());
 		frame.revalidate();
 		frame.repaint();
-		
+
 	}
 
 }

@@ -12,12 +12,18 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.SwingUtilities;
 
+import listener.AccountAdderCancelListener;
+import listener.AccountAdderListener;
+import manager.Accountmanager;
+
 public class AccountAdder extends JPanel {
 	
 	WindowFrame frame;
+	Accountmanager accountManager;
 
-    public AccountAdder(WindowFrame frame) {
+    public AccountAdder(WindowFrame frame, Accountmanager accountManager) {
     	this.frame = frame;
+    	this.accountManager = accountManager;
     	
     	JPanel panel = new JPanel();
        panel.setLayout(new GridBagLayout());
@@ -118,6 +124,7 @@ public class AccountAdder extends JPanel {
        panel.add(txtSum, gbc);
 
        JButton btnSave = new JButton("Save");
+       btnSave.addActionListener(new AccountAdderListener(txtDate,txtContent,txtIncome,txtExpenditure,txtSum, accountManager));
        gbc = new GridBagConstraints();
        gbc.anchor = GridBagConstraints.WEST;
        gbc.fill = GridBagConstraints.NONE;
@@ -129,6 +136,7 @@ public class AccountAdder extends JPanel {
        panel.add(btnSave, gbc);
        
        JButton btnCancel = new JButton("Cancel");
+       btnCancel.addActionListener(new AccountAdderCancelListener(frame));
        gbc = new GridBagConstraints();
        gbc.anchor = GridBagConstraints.EAST;
        gbc.gridwidth = 1;

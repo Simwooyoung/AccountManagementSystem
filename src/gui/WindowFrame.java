@@ -21,7 +21,7 @@ public class WindowFrame extends JFrame {
 		this.accountManager = accountManager;
 		menuselection = new MenuSelection(this);
 		accountviewer = new AccountViewer(this, this.accountManager);
-		accountadder = new AccountAdder(this);
+		accountadder = new AccountAdder(this, this.accountManager);
 		
 		
 		this.setupPanel(menuselection);

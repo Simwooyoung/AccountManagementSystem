@@ -17,6 +17,38 @@ public class AccountViewer extends JPanel{
 	
 	Accountmanager accountManager;
 	
+	public Accountmanager getAccountManager() {
+		return accountManager;
+	}
+
+	public void setAccountManager(Accountmanager accountManager) {
+		this.accountManager = accountManager;
+		this.removeAll();
+	
+		DefaultTableModel model = new DefaultTableModel();
+		model.addColumn("Date");
+		model.addColumn("Content");
+		model.addColumn("Income");
+		model.addColumn("Expenditure");
+		model.addColumn("Sum");
+		
+		for (int i=0; i< accountManager.size(); i++) {
+			Vector row = new Vector();
+			AccountInput si = accountManager.get(i);
+			row.add(si.getDate());
+			row.add(si.getContent());
+			row.add(si.getIncome());
+			row.add(si.getExpenditure());
+			model.addRow(row);
+		}
+		
+		JTable table = new JTable(model);
+		JScrollPane sp = new JScrollPane(table);
+		
+		this.add(sp);
+	}
+
+
 	public AccountViewer(WindowFrame frame, Accountmanager accountManager) {
 		this.frame = frame;
 		this.accountManager = accountManager;

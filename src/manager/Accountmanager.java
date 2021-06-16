@@ -27,6 +27,17 @@ public class Accountmanager implements Serializable {
 		this.input = input;
 	}
 
+	public void addAccount(String date, String content, String Income, String expenditure, String sum) {
+		AccountInput accountInput = new FirstQuarter(AccountQuarter.Firstquarter);
+		accountInput.getUserInput(input);
+		accounts.add(accountInput);
+	}
+	
+	public void addAccount(AccountInput accountInput) {
+		accounts.add(accountInput);
+	}
+
+	
 	public void addAccount() {
 		int quarter = 0;
 		AccountInput accountInput;

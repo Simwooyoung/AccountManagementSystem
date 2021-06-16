@@ -80,7 +80,6 @@ public class MenuManager {
 	public static Accountmanager getObject(String filename) {
 		Accountmanager accountManager = null;
 		
-		
 		try {
 			FileInputStream file = new FileInputStream(filename);
 			ObjectInputStream in = new ObjectInputStream(file);
@@ -89,8 +88,6 @@ public class MenuManager {
 			
 			in.close();
 			file.close();
-			
-			
 		} catch (FileNotFoundException e) {
 			return accountManager;
 		} catch (IOException e) {
